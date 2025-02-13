@@ -1,0 +1,30 @@
+export const signdocument = {
+
+    closepopup: "div.modal:nth-child(14) > div.modal__dialog > div.modal__content > div.modal__body > span.modal__dismiss:nth-child(1) > svg.persona-icon",
+    closepopup1: "div#modal-chinese-new-year-2025 > div.modal__dialog > div.modal__content > span.modal__dismiss:nth-child(1) > svg.persona-icon",
+    closepopup2: "div.modal:nth-child(15) > div.modal__dialog > div.modal__content > div.modal__body > span.modal__dismiss:nth-child(1)",
+    account: "//span[@data-e2eid='current-account-info']",
+    
+    uploaddocument: "//button[normalize-space()='Upload document']",
+    uploadfile: "//input[@data-testid='dropzone-input']",
+    namefile: "//input[@data-e2eid='document-name-input']",
+    uploadcontinue: "//button[@data-e2eid='btn-upload-continue']",
+    addrecipient: "div[data-e2eid='doc-setup-menu-stage-recipient'] span[class='freetext freetext--caption freetext--normal freetext--normalcase text-subtle dark:text-dark-subtle']",
+    addme: "//span[@data-e2eid='add-me']",
+    action: "//span[normalize-space()='Select action']",
+    signer:"//span[@class='checkbox__label'][normalize-space()='Sign']",
+    buttonadd: "//button[@data-e2eid='btn-add']",
+    buttoncontinue: "//button[@data-e2eid='btn-continue']",
+    helipadsign: "//div[@data-testid='pdf-helipad-object']",
+    buttonfinish: "//button[@data-e2eid='doc-setup-finish']",
+    confirmshare: "//button[normalize-space()='Confirm']",
+    addsignature: "//button[@data-e2eid='action-add-signature']",
+    confirm: "//button[normalize-space()='Confirm']",
+    methodeotp: "//span[normalize-space()='PIN']",
+    otp: "//input[@data-e2eid='pin-input']",
+    continuemethode: "(//button[normalize-space()='Continue'])[3]",
+    enterpin: "//div[@data-testid='input-pin']",
+    sign: "//button[@data-testid='btn' and @type='submit']",
+    close: "button[class='btn btn--default btn--variant-link btn--sm btn--icon !text-subtle dark:!text-dark-subtle']",
+
+};
