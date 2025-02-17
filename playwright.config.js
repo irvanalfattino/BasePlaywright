@@ -7,14 +7,14 @@ import { defineConfig, devices } from '@playwright/test';
  */
 import dotenv from 'dotenv';
 import path from 'path';
-dotenv.config();
-
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
   testDir: './e2e/tests',
+  snapshotDir: './e2e/reports/screenshot',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,19 +26,22 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   
   reporter: [
-    ['html', { outputFolder: 'reports' }], // HTML report di folder reports
-    // ['json', { outputFile: 'reports/report.json' }], // JSON report
-    // ['junit', { outputFile: 'reports/results.xml' }] // JUnit report untuk CI/CD
+  ['html', { outputFolder: 'reports/html' }], // HTML report di folder reports
+  ['allure-playwright'], // Pastikan path benar
+    // ['json', { outputFile: 'reports/json/report.json' }], // JSON report
+    // ['junit', { outputFile: 'reports/junit/results.xml' }] // JUnit report untuk CI/CD
   ],
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    //baseURL: process.env.BASE_URL, // || 'https://example.com', // Default jika tidak ada env
+    baseURL: process.env.BASE_URL, // || 'https://example.com', // Default jika tidak ada env
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-      headless: false,  
+    screenshot: 'on', // Bisa juga 'only-on-failure' jika hanya ingin menyimpan saat error
+  
+    headless: true,  
   },
 
 
