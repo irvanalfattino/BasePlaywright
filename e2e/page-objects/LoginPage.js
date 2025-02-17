@@ -1,4 +1,4 @@
-import { BasePage } from './basepage.js';
+import { BasePage } from './BasePage.js';
 import { LoginSelectors } from './selectors/loginSelectors.js';
 
 class LoginPage extends BasePage {
