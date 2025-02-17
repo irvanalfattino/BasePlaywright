@@ -3,7 +3,6 @@ const LoginSelectors = {
     continueButton: "(//button[normalize-space()='Continue'])[1]",
     inputPassword: "input[placeholder='Password']",
     submitButton: "//button[@type='submit']",
-    
 };
 
 export { LoginSelectors };
