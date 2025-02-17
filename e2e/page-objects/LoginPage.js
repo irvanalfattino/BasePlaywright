@@ -1,5 +1,6 @@
-import { BasePage } from './BasePage';
-import { LoginSelectors } from './selectors/LoginSelectors';
+import { BasePage } from './BasePage.js';
+import { LoginSelectors } from './selectors/LoginSelectors.js';
+
 
 class LoginPage extends BasePage {
     constructor(page) {
