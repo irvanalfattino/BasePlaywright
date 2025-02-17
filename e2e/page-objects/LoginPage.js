@@ -20,6 +20,7 @@ class LoginPage extends BasePage {
         await this.click(this.continueButton);
         await this.enterText(this.passwordInput, userPassword);
         await this.click(this.submitButton);
+    
     }
     
 }
