@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "Installing Playwright browsers"
           npx playwright install --with-deps
-          
+
       - name: Install Allure Commandline
         run: |
           echo "Installing Allure command line"
