@@ -1,4 +1,5 @@
 name: Playwright Tests
+
 on:
   push:
     branches:
@@ -37,12 +38,11 @@ jobs:
           echo "Installing Allure command line"
           npm install -g allure-commandline --save-dev
 
-     - name: Set environment variables
-       run: |
+      - name: Set environment variables
+        run: |
           echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
           echo "PID=${{ secrets.PID }}" >> $GITHUB_ENV
           echo "PASSWORD=${{ secrets.PASSWORD }}" >> $GITHUB_ENV
-
 
       - name: Run Playwright tests
         run: |
