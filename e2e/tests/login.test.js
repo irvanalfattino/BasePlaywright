@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/baseTestFixtures.js';
+import { test, expect } from '../fixtures/baseTestFixtures';
 
 test('success login', async ({ loginPage }) => {
     await loginPage.open(process.env.BASE_URL);
