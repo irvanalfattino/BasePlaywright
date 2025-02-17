@@ -1,21 +1,26 @@
-import { BasePage } from './BasePage.js';
-import { LoginSelectors } from './selectors/loginSelectors.js';
+import { BasePage } from './BasePage';
+import { LoginSelectors } from './selectors/LoginSelectors';
 
 class LoginPage extends BasePage {
     constructor(page) {
         super(page);
-        this.inputPrivyID = page.locator(LoginSelectors.inputPrivyID);
+        this.PidInput = page.locator(LoginSelectors.inputPrivyID);
+        this.forgotPasswordText = page.getByText('Forgot your password? ');
+        this.forgotPasswordLink = page.getByRole('link', { name: 'Click here' });
+        this.registerText = page.getByText('Don’t have an account? ');
+        this.registerLink = page.getByRole('link', { name: 'Register' });
         this.continueButton = page.locator(LoginSelectors.continueButton);
-        this.inputPassword = page.locator(LoginSelectors.inputPassword);
+        this.passwordInput = page.locator(LoginSelectors.inputPassword);
         this.submitButton = page.locator(LoginSelectors.submitButton);
     }
 
-    async login(privyID, password) {
-        await this.inputPrivyID.fill(privyID);
-        await this.continueButton.click();
-        await this.inputPassword.fill(password);
-        await this.submitButton.click();
+    async loginUser(userPrivyId, userPassword) {
+        await this.enterText(this.PidInput, userPrivyId);
+        await this.click(this.continueButton);
+        await this.enterText(this.passwordInput, userPassword);
+        await this.click(this.submitButton);
     }
+    
 }
 
 export { LoginPage };

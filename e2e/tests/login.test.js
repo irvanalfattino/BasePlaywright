@@ -1,13 +1,8 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../page-objects/LoginPage';
-import { config } from '../config/env';
+import { test, expect } from '../fixtures/baseTestFixtures';
 
-test('success login', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.open(config.baseURL);
-    await loginPage.login(config.privyID, config.password);
-    await expect(page).toHaveURL(`${config.baseURL}/document/list/todo`);
-    await expect(page).toHaveTitle('Document Dashboard - PrivySign');
-
+test('success login', async ({ loginPage }) => {
+    await loginPage.open(process.env.BASE_URL);
+    await loginPage.loginUser(process.env.PID, process.env.PASSWORD);
+    await expect(loginPage.page).toHaveURL(`${process.env.BASE_URL}/document/list/todo`);
+    await expect(loginPage.page).toHaveTitle('Document Dashboard - PrivySign');
 });
-
